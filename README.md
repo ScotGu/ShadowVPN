@@ -19,7 +19,7 @@ ShadowVPN 是一个基于 libsodium 的高速、安全的 VPN。特别为低端�
 用 git clone 项目，然后编译。 请确保 configure 时使用了 --sysconfdir=/etc 参数。
 
     sudo apt-get install build-essential automake libtool
-    git clone https://github.com/clowwindy/ShadowVPN.git
+    git clone https://github.com/ScotGu/ShadowVPN.git
     git submodule update --init
     ./autogen.sh
     ./configure --enable-static --sysconfdir=/etc
