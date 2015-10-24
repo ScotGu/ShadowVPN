@@ -1,9 +1,32 @@
 ShadowVPN
 =========
-
 [![Build Status]][Travis CI]
 
 [中文说明][Chinese Readme]
+
+ShadowVPN 是一个基于 libsodium 的高速、安全的 VPN。特别为低端硬件，如 OpenWRT 路由器设计。
+
+更多详情见这里。
+
+基本原理简介。
+
+目前处在完善阶段，仍有许多需要做的。如果你希望使用稳定的版本，可以过段时间再过来看看。
+
+安装
+-------
+#### Linux:
+
+用 git clone 项目，然后编译。 请确保 configure 时使用了 --sysconfdir=/etc 参数。
+
+    sudo apt-get install build-essential automake libtool
+    git clone https://github.com/clowwindy/ShadowVPN.git
+    git submodule update --init
+    ./autogen.sh
+    ./configure --enable-static --sysconfdir=/etc
+    make && sudo make install
+
+
+
 
 ShadowVPN is a fast, safe VPN based on libsodium. Designed for low end
 devices, i.e. OpenWRT routers.
@@ -34,8 +57,10 @@ Download a [release] and build. Do not clone the repo, since it's not stable.
 Make sure to set `--sysconfdir=/etc`. You'll find conf files under `/etc`.
 
     # For Debian-based Linux
-    sudo apt-get update
-    sudo apt-get install build-essential automake libtool git -y
+    sudo apt-get install build-essential automake libtool
+    git clone https://github.com/clowwindy/ShadowVPN.git
+    git submodule update --init
+    ./autogen.sh
     ./configure --enable-static --sysconfdir=/etc
     make && sudo make install
 
